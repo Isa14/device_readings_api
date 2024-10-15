@@ -1,0 +1,31 @@
+require: rubocop-rails
+
+Layout/LineLength:
+  Max: 100
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # containing a URI to be longer than Max.
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  Exclude:
+    - db/migrate/**/*
+    - Gemfile
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Lint/ConstantDefinitionInBlock:
+  Enabled: true
+  Exclude:
+    - spec/**/*
+
+
+Metrics/BlockLength:
+  CountComments: false
+  Max: 25
+  Exclude:
+    - config/**/*
+    - spec/**/*
+
